@@ -35,7 +35,7 @@ public class SpatialUnderstandingState : Singleton<SpatialUnderstandingState>, I
         }
     }
 
-
+    public ObjectPlacer Placer;
 
     public bool DoesScanMeetMinBarForCompletion
     {
@@ -198,6 +198,7 @@ public class SpatialUnderstandingState : Singleton<SpatialUnderstandingState>, I
         if (!_triggered && SpatialUnderstanding.Instance.ScanState == SpatialUnderstanding.ScanStates.Done)
         {
             _triggered = true;
+            Placer.CreateScene();
         }
     }
 
